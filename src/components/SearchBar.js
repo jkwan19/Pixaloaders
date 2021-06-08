@@ -6,8 +6,6 @@ import {
   TextInput
 } from 'react-native';
 
-import Button from './Button';
-
 export default function SearchBar({ handleSearch }) {
 
   const [text, setText] = useState('');
@@ -21,8 +19,8 @@ export default function SearchBar({ handleSearch }) {
       <TextInput
         style={styles.search}
         placeholder="Search images"
-        onChangetext={text => setText(text)}
-        defaultValue={text}
+        onChangeText={text => setText(text)}
+        value={text}
         />
     </View>
   )

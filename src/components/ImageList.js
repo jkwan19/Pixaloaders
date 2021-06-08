@@ -1,12 +1,32 @@
 import React from 'react';
-import { StyleSheet, Text, View, TextInput } from 'react-native';
+import {
+  FlatList,
+  StyleSheet,
+  Text,
+  TextInput,
+  View
+} from 'react-native';
 
+import Item from './Item';
 
-export default function ImageList() {
+export default function ImageList({ images }) {
+
+  const renderImage = ({ item }) => {
+    return (
+      <Item
+        item={item}
+        onPress={() => console.log('pressed')}
+      />
+    )
+  };
 
   return (
     <View style={styles.container}>
-
+      <FlatList
+        data={images}
+        renderItem={renderImage}
+        keyExtractor={(image) => image.id}
+      />
     </View>
   )
 }
