@@ -18,13 +18,12 @@ export default function ImageDetails({ route, navigation }) {
 
   return (
     <View style={styles.container}>
-      <View style={styles.user}>
-        <ImageBackground
-          style={styles.userImage}
-          source={{uri: userImageURL}}
-          accessible={true}
-          />
-      </View>
+      <ImageBackground
+        style={styles.userImage}
+        imageStyle={styles.roundAvatar}
+        source={{uri: userImageURL}}
+        />
+
       <Text>User: {user}</Text>
       <Text>Tags: {tags}</Text>
     </View>
@@ -39,12 +38,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  user: {
-    borderColor: '#000',
-    borderWidth: 1,
+  roundAvatar: {
     borderRadius: 50,
-    height: 100,
-    width: 100,
+    borderWidth: 1,
   },
   userImage:{
     resizeMode:'contain',
