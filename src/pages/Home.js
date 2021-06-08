@@ -1,21 +1,36 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, {
+  useState,
+  useEffect
+} from 'react';
+import {
+  StyleSheet,
+  Text,
+  View
+} from 'react-native';
 import axios from 'axios';
 
 import SearchBar from '../components/SearchBar';
 
-const key = process.env.API_KEY;
+const key = '21984056-5fd06a8903b007e3e63524768';
 
 export default function Home() {
 
+  const [images, setImages] = useState([]);
+
+  useEffect(() => {
+    handleSearch('hello');
+  }, []);
+
   const handleSearch = (search) => {
-    axios.get(`https://pixabay.com/api/`, {
+    axios.get(`https://pixabay.com/api/?key=${key}`, {
       params:{
-        key,
         q: search,
         image_type: 'photo'
       }
     })
+      .then((res) => {
+        setImages(res.data.hits)
+      })
   }
 
   return (
