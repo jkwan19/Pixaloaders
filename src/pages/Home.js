@@ -3,7 +3,6 @@ import React, {
   useEffect
 } from 'react';
 import {
-  ScrollView,
   StyleSheet,
   Text,
   View
@@ -37,9 +36,7 @@ export default function Home({ navigation }) {
   return (
     <View style={styles.container}>
       <SearchBar handleSearch={handleSearch}/>
-      <ScrollView>
-        <ImageList images={images} navigation={navigation}/>
-      </ScrollView>
+      <ImageList images={images} navigation={navigation}/>
     </View>
   )
 }

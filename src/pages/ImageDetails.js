@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  Image,
+  ImageBackground,
   ScrollView,
   StyleSheet,
   Text,
@@ -12,34 +12,21 @@ export default function ImageDetails({ route, navigation }) {
 
   const {
     tags,
-    previewURL,
-    largeImageURL,
-    views,
-    downloads,
-    favorites,
-    likes,
-    comments,
     user,
     userImageURL,
-    webformatURL
   } = route.params.data;
 
   return (
     <View style={styles.container}>
-      <View style={styles.imageContainer}>
-        <Image
-          styles={styles.image}
-          source={webformatURL}
-          />
-      </View>
       <View style={styles.user}>
-        <Image
-          styles={styles.userImage}
+        <ImageBackground
+          style={styles.userImage}
           source={{uri: userImageURL}}
+          accessible={true}
           />
       </View>
-      <Text>Tags: {tags}</Text>
       <Text>User: {user}</Text>
+      <Text>Tags: {tags}</Text>
     </View>
   )
 }
@@ -52,26 +39,20 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  image: {
-    resizeMode: 'contain',
-    height: 100,
-    width: 100,
-  },
-  imageContainer: {
-    minHeight: 100,
-    minWidth: 100
-  },
   user: {
-    borderColor: 'black',
+    borderColor: '#000',
     borderWidth: 1,
     borderRadius: 50,
     height: 100,
-    width: 100
+    width: 100,
   },
   userImage:{
     resizeMode:'contain',
     minWidth: 100,
     minHeight: 100,
+  },
+  img: {
+    position: 'relative'
   }
 });
 

@@ -4,7 +4,7 @@ import {
   StyleSheet,
   Text,
   TextInput,
-  View
+  SafeAreaView
 } from 'react-native';
 
 import Item from './Item';
@@ -23,19 +23,20 @@ export default function ImageList({ images, navigation }) {
   };
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <FlatList
         data={images}
         renderItem={renderImage}
         keyExtractor={(image) => image.id.toString()}
       />
-    </View>
+    </SafeAreaView>
   )
 }
 
 const styles = StyleSheet.create({
   container: {
     padding: 10,
-    width: '100%'
+    width: '100%',
+    alignItems: 'center'
   }
 });

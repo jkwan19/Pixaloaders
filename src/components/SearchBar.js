@@ -28,10 +28,10 @@ export default function SearchBar({ handleSearch }) {
 
 const styles = StyleSheet.create({
   container: {
-    padding: 10
+    padding: 10,
+    marginTop: 10
   },
   search: {
     height: 50,
-
   }
 });
