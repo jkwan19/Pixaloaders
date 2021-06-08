@@ -12,7 +12,7 @@ export default function App() {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator >
         <Stack.Screen name="Pixaloader" component={Home} />
         <Stack.Screen name="Details" component={ImageDetails} />
       </Stack.Navigator>

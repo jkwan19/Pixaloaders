@@ -4,7 +4,7 @@ import {
   ScrollView,
   StyleSheet,
   Text,
-  View
+  View,
 } from 'react-native';
 
 
@@ -12,6 +12,7 @@ export default function ImageDetails({ route, navigation }) {
 
   const {
     tags,
+    previewURL,
     largeImageURL,
     views,
     downloads,
@@ -25,16 +26,20 @@ export default function ImageDetails({ route, navigation }) {
 
   return (
     <View style={styles.container}>
-      <Image
-        styles={styles.image}
-        source={{uri: webformatURL}}
-        />
+      <View style={styles.imageContainer}>
+        <Image
+          styles={styles.image}
+          source={webformatURL}
+          />
+      </View>
+      <View style={styles.user}>
+        <Image
+          styles={styles.userImage}
+          source={{uri: userImageURL}}
+          />
+      </View>
       <Text>Tags: {tags}</Text>
       <Text>User: {user}</Text>
-      <Image
-        styles={styles.userImage}
-        source={{uri: userImageURL}}
-        />
     </View>
   )
 }
@@ -42,21 +47,31 @@ export default function ImageDetails({ route, navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    flexDirection: 'column',
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
   },
   image: {
-    backgroundColor: 'black',
-    resizeMode: 'cover',
+    resizeMode: 'contain',
     height: 100,
     width: 100,
   },
-  userImage:{
-    backgroundColor: 'black',
-    resizeMode: 'cover',
+  imageContainer: {
+    minHeight: 100,
+    minWidth: 100
+  },
+  user: {
+    borderColor: 'black',
+    borderWidth: 1,
+    borderRadius: 50,
     height: 100,
     width: 100
+  },
+  userImage:{
+    resizeMode:'contain',
+    minWidth: 100,
+    minHeight: 100,
   }
 });
 
