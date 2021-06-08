@@ -3,6 +3,7 @@ import React, {
   useEffect
 } from 'react';
 import {
+  ScrollView,
   StyleSheet,
   Text,
   View
@@ -10,16 +11,13 @@ import {
 import axios from 'axios';
 
 import SearchBar from '../components/SearchBar';
+import ImageList from '../components/ImageList';
 
 const key = '21984056-5fd06a8903b007e3e63524768';
 
 export default function Home() {
 
   const [images, setImages] = useState([]);
-
-  useEffect(() => {
-    handleSearch('hello');
-  }, []);
 
   const handleSearch = (search) => {
     axios.get(`https://pixabay.com/api/?key=${key}`, {
@@ -36,7 +34,10 @@ export default function Home() {
   return (
     <View style={styles.container}>
       <Text>Home</Text>
-      <SearchBar />
+      <SearchBar handleSearch={handleSearch}/>
+      <ScrollView>
+        <ImageList images={images}/>
+      </ScrollView>
     </View>
   )
 }
