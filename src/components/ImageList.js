@@ -9,13 +9,15 @@ import {
 
 import Item from './Item';
 
-export default function ImageList({ images }) {
+export default function ImageList({ images, navigation }) {
 
   const renderImage = ({ item }) => {
     return (
       <Item
         item={item}
-        onPress={() => console.log('pressed')}
+        onPress={() => {
+          navigation.navigate('Details', { data: item })
+        }}
       />
     )
   };

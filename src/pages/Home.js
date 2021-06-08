@@ -16,7 +16,7 @@ import ImageList from '../components/ImageList';
 
 const key = '21984056-5fd06a8903b007e3e63524768';
 
-export default function Home() {
+export default function Home({ navigation }) {
 
   const [images, setImages] = useState([]);
 
@@ -38,7 +38,7 @@ export default function Home() {
     <View style={styles.container}>
       <SearchBar handleSearch={handleSearch}/>
       <ScrollView>
-        <ImageList images={images}/>
+        <ImageList images={images} navigation={navigation}/>
       </ScrollView>
     </View>
   )
