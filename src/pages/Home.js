@@ -8,6 +8,7 @@ import {
   Text,
   View
 } from 'react-native';
+
 import axios from 'axios';
 
 import SearchBar from '../components/SearchBar';
@@ -36,7 +37,6 @@ export default function Home() {
 
   return (
     <View style={styles.container}>
-      <Text>Home</Text>
       <SearchBar handleSearch={handleSearch}/>
       <ScrollView>
         <ImageList images={images}/>
@@ -47,6 +47,11 @@ export default function Home() {
 
 const styles = StyleSheet.create({
   container: {
-
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });
+
+

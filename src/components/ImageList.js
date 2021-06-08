@@ -25,7 +25,7 @@ export default function ImageList({ images }) {
       <FlatList
         data={images}
         renderItem={renderImage}
-        keyExtractor={(image) => image.id}
+        keyExtractor={(image) => image.id.toString()}
       />
     </View>
   )

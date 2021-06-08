@@ -6,7 +6,7 @@ import {
   TouchableOpacity
 } from "react-native";
 
-export default function Item ({ item, onPress}) {
+export default function Item ({ item, onPress }) {
 
   const {
     previewURL
@@ -16,9 +16,9 @@ export default function Item ({ item, onPress}) {
     <TouchableOpacity onPress={onPress}>
       <Image
         style={{
-          height: '40px'
+          height: 40
         }}
-        source={previewURL}
+        source={item.previewURL}
       />
     </TouchableOpacity>
     )
