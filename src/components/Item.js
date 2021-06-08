@@ -16,7 +16,7 @@ export default function Item ({ item, onPress }) {
     <TouchableOpacity onPress={onPress}>
       <Image
         style={styles.image}
-        source={{uri: item.previewURL}}
+        source={{uri: previewURL}}
       />
     </TouchableOpacity>
   )
