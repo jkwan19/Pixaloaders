@@ -33,10 +33,7 @@ export default function ImageList({ images }) {
 
 const styles = StyleSheet.create({
   container: {
-    padding: 10
-  },
-  search: {
-    height: 50,
-
+    padding: 10,
+    width: '100%'
   }
 });

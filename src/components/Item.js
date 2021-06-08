@@ -15,12 +15,17 @@ export default function Item ({ item, onPress }) {
   return (
     <TouchableOpacity onPress={onPress}>
       <Image
-        style={{
-          height: 40
-        }}
-        source={item.previewURL}
+        style={styles.image}
+        source={{uri: item.previewURL}}
       />
     </TouchableOpacity>
-    )
-
+  )
 }
+
+const styles = StyleSheet.create({
+  image: {
+    backgroundColor: 'transparent',
+    width: 60,
+    height: 60
+  }
+});

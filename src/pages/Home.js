@@ -21,9 +21,8 @@ export default function Home() {
   const [images, setImages] = useState([]);
 
   const handleSearch = (search) => {
-    if (!search) {
-      setImages([]);
-    }
+    if (!search) return;
+
     axios.get(`https://pixabay.com/api/?key=${key}`, {
       params:{
         q: search,
