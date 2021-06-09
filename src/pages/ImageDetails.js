@@ -1,7 +1,6 @@
 import React from 'react';
 import {
   ImageBackground,
-  ScrollView,
   StyleSheet,
   Text,
   View,
@@ -24,8 +23,8 @@ export default function ImageDetails({ route, navigation }) {
         source={{uri: userImageURL}}
         />
 
-      <Text>User: {user}</Text>
-      <Text>Tags: {tags}</Text>
+      <Text style={styles.text}>User: {user}</Text>
+      <Text style={styles.text}>Tags: {tags}</Text>
     </View>
   )
 }
@@ -49,6 +48,9 @@ const styles = StyleSheet.create({
   },
   img: {
     position: 'relative'
+  },
+  text: {
+    fontWeight: 'bold',
   }
 });
 

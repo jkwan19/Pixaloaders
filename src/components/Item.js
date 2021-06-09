@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import {
   Image,
   StyleSheet,
-  Text,
   TouchableOpacity
 } from "react-native";
 
@@ -25,7 +24,7 @@ export default function Item ({ item, onPress }) {
 const styles = StyleSheet.create({
   image: {
     backgroundColor: 'transparent',
-    width: 60,
-    height: 60
+    width: 120,
+    height: 120
   }
 });

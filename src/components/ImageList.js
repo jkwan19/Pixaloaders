@@ -2,8 +2,6 @@ import React from 'react';
 import {
   FlatList,
   StyleSheet,
-  Text,
-  TextInput,
   SafeAreaView
 } from 'react-native';
 
@@ -35,7 +33,7 @@ export default function ImageList({ images, navigation }) {
 
 const styles = StyleSheet.create({
   container: {
-    padding: 10,
+    flex: 10,
     width: '100%',
     alignItems: 'center'
   }

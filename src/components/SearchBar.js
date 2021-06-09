@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import {
   StyleSheet,
-  Text,
   View,
   TextInput
 } from 'react-native';
@@ -28,8 +27,11 @@ export default function SearchBar({ handleSearch }) {
 
 const styles = StyleSheet.create({
   container: {
-    padding: 10,
-    marginTop: 10
+    flex: 1,
+    padding: 5,
+    marginTop: 5,
+    width: '100%',
+    alignItems: 'center'
   },
   search: {
     height: 50,
