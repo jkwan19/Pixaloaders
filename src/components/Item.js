@@ -25,6 +25,9 @@ const styles = StyleSheet.create({
   image: {
     backgroundColor: 'transparent',
     width: 120,
-    height: 120
+    height: 120,
+    margin: 2,
+    borderWidth: 2,
+    borderColor: '#42412e'
   }
 });

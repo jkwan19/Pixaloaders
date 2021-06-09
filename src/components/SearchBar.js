@@ -20,6 +20,7 @@ export default function SearchBar({ handleSearch }) {
         placeholder="Search images"
         onChangeText={text => setText(text)}
         value={text}
+        textAlign='center'
         />
     </View>
   )
@@ -31,9 +32,12 @@ const styles = StyleSheet.create({
     padding: 5,
     marginTop: 5,
     width: '100%',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   search: {
     height: 50,
+    width: '100%',
+    backgroundColor: '#ebebeb',
+    borderRadius: 10,
   }
 });
