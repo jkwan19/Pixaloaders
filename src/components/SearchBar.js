@@ -9,10 +9,6 @@ export default function SearchBar({ handleSearch }) {
 
   const [text, setText] = useState('');
 
-  // useEffect(() => {
-  //   handleSearch(text);
-  // }, [text])
-
   return (
     <View style={styles.container}>
       <TextInput
