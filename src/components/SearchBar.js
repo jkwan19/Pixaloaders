@@ -9,9 +9,9 @@ export default function SearchBar({ handleSearch }) {
 
   const [text, setText] = useState('');
 
-  useEffect(() => {
-    handleSearch(text);
-  }, [text])
+  // useEffect(() => {
+  //   handleSearch(text);
+  // }, [text])
 
   return (
     <View style={styles.container}>
@@ -19,7 +19,7 @@ export default function SearchBar({ handleSearch }) {
         style={styles.search}
         placeholder="Search images"
         onChangeText={text => setText(text)}
-        value={text}
+        onSubmitEditing={() => handleSearch(text)}
         textAlign='center'
         />
     </View>

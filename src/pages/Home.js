@@ -19,12 +19,15 @@ export default function Home({ navigation }) {
 
   const [images, setImages] = useState([]);
 
-  const handleSearch = (search) => {
-    if (!search) return;
+  const handleSearch = (input) => {
+    if (!input) {
+      setImages([]);
+      return;
+    };
 
     axios.get(`https://pixabay.com/api/?key=${key}`, {
       params:{
-        q: search,
+        q: input,
         image_type: 'photo'
       }
     })
@@ -33,9 +36,11 @@ export default function Home({ navigation }) {
       })
   }
 
+
   return (
     <View style={styles.container}>
       <SearchBar handleSearch={handleSearch}/>
+
       <ImageList images={images} navigation={navigation}/>
     </View>
   )
@@ -47,7 +52,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
-  },
+  }
 });
 
 
