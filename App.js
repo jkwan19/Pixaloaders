@@ -12,7 +12,13 @@ export default function App() {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator >
+      <Stack.Navigator
+        initialRouteName="Pixaloader"
+        screenOptions={{
+          headerTintColor: 'white',
+          headerStyle: { backgroundColor: '#58a6d6' }
+        }}
+        >
         <Stack.Screen name="Pixaloader" component={Home} />
         <Stack.Screen name="Details" component={ImageDetails} />
       </Stack.Navigator>
