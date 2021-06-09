@@ -2,9 +2,10 @@ import React from 'react';
 import {
   ImageBackground,
   StyleSheet,
-  Text,
   View,
 } from 'react-native';
+
+import Detail from '../components/Detail';
 
 
 export default function ImageDetails({ route, navigation }) {
@@ -22,9 +23,14 @@ export default function ImageDetails({ route, navigation }) {
         imageStyle={styles.roundAvatar}
         source={{uri: userImageURL}}
         />
-
-      <Text style={styles.text}>User: {user}</Text>
-      <Text style={styles.text}>Tags: {tags}</Text>
+      <Detail
+        type='User'
+        info={user}
+        />
+      <Detail
+        type='Tags'
+        info={tags}
+        />
     </View>
   )
 }
@@ -45,13 +51,8 @@ const styles = StyleSheet.create({
     resizeMode:'contain',
     minWidth: 100,
     minHeight: 100,
+    margin: 10
   },
-  img: {
-    position: 'relative'
-  },
-  text: {
-    fontWeight: 'bold',
-  }
 });
 
 
